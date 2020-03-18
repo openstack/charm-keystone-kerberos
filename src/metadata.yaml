@@ -1,0 +1,28 @@
+name: keystone-kerberos
+summary: Keystone backend for kerberos authentication
+maintainer: OpenStack Charmers <openstack-charmers@lists.ubuntu.com>
+description: |
+  This charm supports the use of Kerberos as a security mechanism
+  for authentication through keystone.
+tags:
+  - openstack
+  - identity
+  - kerberos
+  - ldap
+series:
+  - bionic
+  - eoan
+subordinate: true
+provides:
+  keystone-fid-service-provider:
+    interface: keystone-fid-service-provider
+    scope: container
+requires:
+  container:
+    interface: juju-info
+    scope: container
+resources:
+  keystone_keytab:
+    type: file
+    filename: keystone.keytab
+    description: Path to the kerberos keytab for keystone service

@@ -1,0 +1,25 @@
+options:
+  display-name:
+    type: string
+    default: 'keystone-kerberos'
+    description: Custom name for UI
+  kerberos-realm:
+    type: string
+    default: ""
+    description: |
+      The domain over which a Kerberos authentication server has the authority
+      to authenticate a user, host or service. It is often the upper case
+      version fo the name of the DNS domain over which is presides,
+      i.e REALM.COM. Must be in caps.
+  kerberos-server:
+    type: string
+    default: ""
+    description: |
+      Kerberos server name. Typically, the server name is composed of a name
+      followed by the realm name, i.e, krb5.realm.com
+  kerberos-domain:
+    type: string
+    default: 'k8s'
+    description: |
+      The Openstack domain against which Kerberos authentication should be
+      used.

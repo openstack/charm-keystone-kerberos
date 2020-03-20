@@ -1,8 +1,8 @@
 charm_name: keystone-kerberos
 smoke_bundles:
-- bionic-queens.yaml
+- bionic-queens
 gate_bundles:
-- bionic-queens.yaml
+- bionic-queens
 configure:
 - zaza.openstack.charm_tests.kerberos.setup.add_dns_entry_to_keystone
 - zaza.openstack.charm_tests.kerberos.setup.configure_keystone_service_in_kerberos

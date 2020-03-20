@@ -42,7 +42,8 @@ applications:
   keystone-kerberos:
     charm: ../../../keystone-kerberos
   kerberos-server:
-    charm: /home/ubutu/charm-kerberos-test-fixture
+    charm: /home/ubuntu/charm-kerberos-test-fixture
+    num_units: 1
     to:
       - '5'
 

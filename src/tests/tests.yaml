@@ -10,3 +10,7 @@ configure:
 - zaza.openstack.charm_tests.kerberos.setup.openstack_setup_kerberos
 tests:
 - zaza.openstack.charm_tests.kerberos.tests.CharmKeystoneKerberosTest
+target_deploy_status:
+  keystone-saml-mellon:
+    workload-status: blocked
+    workload-status-message:  "Kerberos configuration incomplete"

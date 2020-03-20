@@ -32,19 +32,28 @@ applications:
       token-expiration: 60
     to:
     - '1'
-    - '2'
-    - '3'
+#    - '2'
+#    - '3'
   openstack-dashboard:
     charm: cs:~openstack-charmers-next/openstack-dashboard
     num_units: 1
     to:
-      - '4'
+      - '2'
+#      - '4'
   keystone-kerberos:
     charm: ../../../keystone-kerberos
+    options:
+      kerberos-realm: 'TESTUBUNTU.COM'
+      kerberos-server: 'kerberos.testubuntu.com'
+      kerberos-domain: 'k8s'
+    resource:
+      keystone_keytab: keystone.keytab
+
   kerberos-server:
     charm: /home/ubuntu/charm-kerberos-test-fixture
     num_units: 1
     to:
-      - '5'
+      - '3'
+#      - '5'
 
 

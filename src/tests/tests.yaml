@@ -4,13 +4,14 @@ smoke_bundles:
 gate_bundles:
 - bionic-queens
 configure:
-- zaza.openstack.charm_tests.kerberos.setup.add_dns_entry_to_keystone
-- zaza.openstack.charm_tests.kerberos.setup.configure_keystone_service_in_kerberos
-- zaza.openstack.charm_tests.kerberos.setup.retrieve_and_attach_keytab
-- zaza.openstack.charm_tests.kerberos.setup.openstack_setup_kerberos
+- zaza.openstack.charm_tests.kerberos.setup
+#- zaza.openstack.charm_tests.kerberos.setup.add_dns_entry_to_keystone
+#- zaza.openstack.charm_tests.kerberos.setup.configure_keystone_service_in_kerberos
+#- zaza.openstack.charm_tests.kerberos.setup.retrieve_and_attach_keytab
+#- zaza.openstack.charm_tests.kerberos.setup.openstack_setup_kerberos
 tests:
 - zaza.openstack.charm_tests.kerberos.tests.CharmKeystoneKerberosTest
 target_deploy_status:
-  keystone-saml-mellon:
+  keystone-kerberos:
     workload-status: blocked
     workload-status-message:  "Kerberos configuration incomplete"

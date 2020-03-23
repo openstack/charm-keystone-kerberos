@@ -9,7 +9,7 @@ configure:
 - zaza.openstack.charm_tests.kerberos.setup.configure_keystone_service_in_kerberos
 - zaza.openstack.charm_tests.kerberos.setup.retrieve_and_attach_keytab
 - zaza.openstack.charm_tests.kerberos.setup.openstack_setup_kerberos
-- zaza.openstack.charm_tests.kerberos.setup.retrieve_token_and_conf_for_test_host
+- zaza.openstack.charm_tests.kerberos.setup.setup_kerberos_configuration_for_test_host
 tests:
 - zaza.openstack.charm_tests.kerberos.tests.CharmKeystoneKerberosTest
 target_deploy_status:

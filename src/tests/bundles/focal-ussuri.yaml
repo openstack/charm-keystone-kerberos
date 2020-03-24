@@ -1,4 +1,4 @@
-series: bionic
+series: focal
 comment:
 - 'machines section to decide order of deployment. database sooner = faster'
 machines:

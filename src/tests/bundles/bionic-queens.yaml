@@ -41,7 +41,7 @@ applications:
     to:
       - '2'
   ubuntu-test-host:
-    charm: cs:~ubuntu
+    charm: cs:ubuntu
     num_units: 1
     to:
       - '3'

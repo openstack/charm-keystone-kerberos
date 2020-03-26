@@ -3,9 +3,9 @@ smoke_bundles:
   - bionic-train
 gate_bundles:
   - bionic-queens
-  #- bionic-rocky
-  #- bionic-stein
-  #- bionic-train
+  - bionic-rocky
+  - bionic-stein
+  - bionic-train
 dev_bundles:
   - bionic-ussuri
   - focal-ussuri

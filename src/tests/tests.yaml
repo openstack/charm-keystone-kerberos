@@ -13,6 +13,9 @@ configure:
 - zaza.openstack.charm_tests.kerberos.setup.run_all_tests
 tests:
 - zaza.openstack.charm_tests.kerberos.tests.CharmKeystoneKerberosTest
+tests_options:
+  force_deploy:
+    - focal-ussuri
 target_deploy_status:
   keystone-kerberos:
     workload-status: blocked

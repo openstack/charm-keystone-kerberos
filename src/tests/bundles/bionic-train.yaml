@@ -6,6 +6,7 @@ machines:
     constraints: mem=3072M
   '1':
   '2':
+  '3':
 relations:
 - - keystone:shared-db
   - mysql:shared-db
@@ -39,3 +40,8 @@ applications:
     num_units: 1
     to:
       - '2'
+  ubuntu-test-host:
+    charm: cs:ubuntu
+    num_units: 1
+    to:
+      - '3'

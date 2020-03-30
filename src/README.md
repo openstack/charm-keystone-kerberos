@@ -47,8 +47,7 @@ In a bundle:
 
 To authenticate against Keystone and Kerberos from a host, the following 
 librairies need to be installed :
-- sudo apt install krb5-user gcc python-dev libkrb5-dev python-pip
-- pip install keystoneauth1[kerberos]
+- sudo apt install krb5-user python3-openstackclient python3-requests-kerberos
 
 # Configuration
 

@@ -10,9 +10,9 @@ dev_bundles:
   - bionic-ussuri
   - focal-ussuri
 configure:
-- zaza.openstack.charm_tests.kerberos.setup.run_all_configuration_steps
+  - zaza.openstack.charm_tests.kerberos.setup.run_all_configuration_steps
 tests:
-- zaza.openstack.charm_tests.kerberos.tests.CharmKeystoneKerberosTest
+  - zaza.openstack.charm_tests.kerberos.tests.CharmKeystoneKerberosTest
 tests_options:
   force_deploy:
     - focal-ussuri

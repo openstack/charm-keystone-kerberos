@@ -4,13 +4,8 @@ This subordinate charm provides a way to authenticate in Openstack for
 a specific domain with a Kerberos ticket. This provides an additional 
 security layer. An external Kerberos server is necessary.
 
-This kerberos subordinate charm is supported on Ubuntu Bionic (18.04 LTS) with the following versions of 
-Openstack:
-- Queens
-- Rocky
-- Stein
-- Train
-- Ussuri
+This kerberos subordinate charm is supported on Ubuntu Bionic (18.04 LTS) with 
+the Openstack versions Queens and later. 
 
 
 # Usage

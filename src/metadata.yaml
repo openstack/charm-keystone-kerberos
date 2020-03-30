@@ -11,7 +11,7 @@ tags:
   - ldap
 series:
   - bionic
-  - eoan
+  - focal
 subordinate: true
 provides:
   keystone-fid-service-provider:

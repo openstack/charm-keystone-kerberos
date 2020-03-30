@@ -1,0 +1,47 @@
+series: focal
+comment:
+- 'machines section to decide order of deployment. database sooner = faster'
+machines:
+  '0':
+    constraints: mem=3072M
+  '1':
+  '2':
+  '3':
+relations:
+- - keystone:shared-db
+  - mysql:shared-db
+- - keystone
+  - keystone-kerberos
+applications:
+  mysql:
+    charm: cs:~openstack-charmers-next/percona-cluster
+    num_units: 1
+    to:
+    - '0'
+  keystone:
+    charm: cs:~openstack-charmers-next/keystone
+    num_units: 1
+    options:
+      token-provider: 'fernet'
+      token-expiration: 60
+    to:
+    - '1'
+  keystone-kerberos:
+    charm: ../../../keystone-kerberos
+    options:
+      kerberos-realm: 'TESTUBUNTU.COM'
+      kerberos-server: 'kerberos.testubuntu.com'
+      kerberos-domain: 'k8s'
+    resource:
+      keystone_keytab: keystone.keytab
+
+  kerberos-server:
+    charm: cs:~openstack-charmers-next/kerberos-test-fixture
+    num_units: 1
+    to:
+      - '2'
+  ubuntu-test-host:
+    charm: cs:ubuntu
+    num_units: 1
+    to:
+      - '3'

@@ -4,22 +4,17 @@ This subordinate charm provides a way to authenticate in Openstack for
 a specific domain with a Kerberos ticket. This provides an additional 
 security layer. An external Kerberos server is necessary.
 
-The following documentation is useful to understand better the charm 
-implementation:
-
-* https://www.objectif-libre.com/fr/blog/2018/02/26/kerberos-authentication-for-keystone/ 
-* https://jaosorior.dev/2018/keberos-for-keystone-with-mod_auth_gssapi/
+This kerberos subordinate charm is supported on Ubuntu Bionic (18.04 LTS) with 
+the Openstack versions Queens and later. 
 
 
 # Usage
 
-Use this charm with the Keystone and Keystone-LDAP charms:
+Use this charm with the Keystone charm:
     
     juju deploy keystone
-    juju deploy keystone-ldap
     juju deploy openstack-dashboard
     juju deploy keystone-kerberos
-    juju add-relation keystone keystone-ldap
     juju add-relation keystone openstack-dashboard
     juju add-relation keystone keystone-kerberos
     
@@ -47,8 +42,7 @@ In a bundle:
 
 To authenticate against Keystone and Kerberos from a host, the following 
 librairies need to be installed :
-- sudo apt install krb5-user gcc python-dev libkrb5-dev python-pip
-- pip install keystoneauth1[kerberos]
+- sudo apt install krb5-user python3-openstackclient python3-requests-kerberos
 
 # Configuration
 

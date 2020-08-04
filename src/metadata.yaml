@@ -12,6 +12,7 @@ tags:
 series:
   - bionic
   - focal
+  - groovy
 subordinate: true
 provides:
   keystone-fid-service-provider:

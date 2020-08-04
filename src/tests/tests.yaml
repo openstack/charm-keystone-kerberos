@@ -6,16 +6,18 @@ gate_bundles:
   - bionic-rocky
   - bionic-stein
   - bionic-train
-dev_bundles:
   - bionic-ussuri
   - focal-ussuri
+dev_bundles:
+  - focal-victoria
+  - groovy-victoria
 configure:
   - zaza.openstack.charm_tests.kerberos.setup.run_all_configuration_steps
 tests:
   - zaza.openstack.charm_tests.kerberos.tests.CharmKeystoneKerberosTest
 tests_options:
   force_deploy:
-    - focal-ussuri
+    - groovy-victoria
 target_deploy_status:
   keystone-kerberos:
     workload-status: blocked

@@ -1,5 +1,5 @@
 includes: ['layer:openstack', 'interface:keystone-fid-service-provider', 'interface:juju-info']
-repo: https://github.com/camille-rodriguez/keystone-kerberos.git
+repo: https://github.com/openstack/charm-keystone-kerberos.git
 options:
   basic:
     use_venv: True

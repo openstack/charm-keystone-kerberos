@@ -8,8 +8,8 @@ gate_bundles:
   - bionic-train
   - bionic-ussuri
   - focal-ussuri
-dev_bundles:
   - focal-victoria
+dev_bundles:
   - groovy-victoria
 configure:
   - zaza.openstack.charm_tests.kerberos.setup.run_all_configuration_steps

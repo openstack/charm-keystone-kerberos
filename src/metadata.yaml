@@ -5,14 +5,15 @@ description: |
   This charm supports the use of Kerberos as a security mechanism
   for authentication through keystone.
 tags:
-  - openstack
-  - identity
-  - kerberos
-  - ldap
+- openstack
+- identity
+- kerberos
+- ldap
 series:
-  - bionic
-  - focal
-  - groovy
+- bionic
+- focal
+- groovy
+- hirsute
 subordinate: true
 provides:
   keystone-fid-service-provider:

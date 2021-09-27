@@ -11,11 +11,14 @@ gate_bundles:
   - focal-ussuri
   - focal-victoria
   - focal-wallaby
-  - groovy-victoria
+  - focal-xena
 
 dev_bundles:
   - bionic-rocky
+  - groovy-victoria
   - hirsute-wallaby
+  - impish-xena
+
 
 configure:
   - zaza.openstack.charm_tests.kerberos.setup.run_all_configuration_steps
@@ -25,7 +28,8 @@ tests:
 
 tests_options:
   force_deploy:
-    - hirsute-wallaby
+    - groovy-victoria
+    - impish-xena
 
 target_deploy_status:
   keystone-kerberos:

@@ -18,7 +18,6 @@ applications:
     num_units: 1
     to:
     - '0'
-    channel: candidate
   keystone:
     charm: cs:~openstack-charmers/keystone
     num_units: 1
@@ -27,7 +26,6 @@ applications:
       token-expiration: 60
     to:
     - '1'
-    channel: candidate
   keystone-kerberos:
     charm: ../../../keystone-kerberos
     options:

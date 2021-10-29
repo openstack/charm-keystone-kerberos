@@ -6,19 +6,19 @@ smoke_bundles:
 gate_bundles:
   - bionic-queens
   - bionic-stein
-  - bionic-train
   - bionic-ussuri
   - focal-ussuri
   - focal-victoria
   - focal-wallaby
   - focal-xena
-
-dev_bundles:
-  - bionic-rocky
-  - groovy-victoria
   - hirsute-wallaby
   - impish-xena
 
+dev_bundles:
+  - bionic-rocky
+  - bionic-train
+  - focal-yoga
+  - jammy-yoga
 
 configure:
   - zaza.openstack.charm_tests.kerberos.setup.run_all_configuration_steps
@@ -28,8 +28,9 @@ tests:
 
 tests_options:
   force_deploy:
-    - groovy-victoria
+    - hirsute-wallaby
     - impish-xena
+    - jammy-yoga
 
 target_deploy_status:
   keystone-kerberos:

@@ -1,6 +1,8 @@
 variables:
   openstack-origin: &openstack-origin cloud:focal-xena
 
+local_overlay_enabled: False
+
 series: focal
 comment:
 - 'machines section to decide order of deployment. database sooner = faster'
@@ -48,7 +50,7 @@ applications:
     - '3'
     channel: latest/edge
   keystone-kerberos:
-    charm: ../../../keystone-kerberos
+    charm: ../../../keystone-kerberos.charm
     options:
       kerberos-realm: 'TESTUBUNTU.COM'
       kerberos-server: 'kerberos.testubuntu.com'

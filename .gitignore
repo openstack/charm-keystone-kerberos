@@ -7,3 +7,4 @@ src/tests/bundles/overlays/local-charm-overlay.yaml.j2
 interfaces
 layers
 .idea
+*.charm

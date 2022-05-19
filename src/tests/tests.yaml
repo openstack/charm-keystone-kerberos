@@ -1,21 +1,13 @@
 charm_name: keystone-kerberos
 
 smoke_bundles:
-  - focal-ussuri
+  - focal-victoria
 
 gate_bundles:
-  - bionic-queens
-  - bionic-stein
-  - bionic-train
-  - bionic-ussuri
   - focal-ussuri
   - focal-victoria
-  - focal-wallaby
-  - groovy-victoria
 
-dev_bundles:
-  - bionic-rocky
-  - hirsute-wallaby
+dev_bundles: []
 
 configure:
   - zaza.openstack.charm_tests.kerberos.setup.run_all_configuration_steps
@@ -24,8 +16,7 @@ tests:
   - zaza.openstack.charm_tests.kerberos.tests.CharmKeystoneKerberosTest
 
 tests_options:
-  force_deploy:
-    - hirsute-wallaby
+  force_deploy: []
 
 target_deploy_status:
   keystone-kerberos:

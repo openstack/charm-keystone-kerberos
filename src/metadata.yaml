@@ -10,7 +10,6 @@ tags:
 - kerberos
 - ldap
 series:
-- focal
 - jammy
 subordinate: true
 provides:

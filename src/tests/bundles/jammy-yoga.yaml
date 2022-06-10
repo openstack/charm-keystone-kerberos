@@ -15,6 +15,7 @@ machines:
     constraints: mem=3072M
   '3':
   '4':
+    series: focal
   '5':
 relations:
 - - keystone:shared-db
@@ -59,7 +60,8 @@ applications:
       keystone_keytab: keystone.keytab
 
   kerberos-server:
-    charm: cs:~openstack-charmers-next/kerberos-test-fixture
+    charm: ch:openstack-charmers-next-kerberos-test-fixture
+    series: focal
     num_units: 1
     to:
       - '4'

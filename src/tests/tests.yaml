@@ -1,15 +1,14 @@
 charm_name: keystone-kerberos
 
 smoke_bundles:
-  - focal-xena
+  - focal-yoga
 
 gate_bundles:
   - focal-xena
-  - impish-xena
-
-dev_bundles:
   - focal-yoga
   - jammy-yoga
+
+dev_bundles:
 
 configure:
   - zaza.openstack.charm_tests.kerberos.setup.run_all_configuration_steps
@@ -19,7 +18,6 @@ tests:
 
 tests_options:
   force_deploy:
-    - impish-xena
     - jammy-yoga
 
 target_deploy_status:

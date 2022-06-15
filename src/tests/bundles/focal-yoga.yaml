@@ -26,7 +26,7 @@ relations:
 applications:
   keystone-mysql-router:
     charm: ch:mysql-router
-    channel: latest/edge
+    channel: 8.0/edge
 
   mysql-innodb-cluster:
     charm: ch:mysql-innodb-cluster
@@ -37,7 +37,7 @@ applications:
     - '0'
     - '1'
     - '2'
-    channel: latest/edge
+    channel: 8.0/edge
 
   keystone:
     charm: ch:keystone
@@ -48,7 +48,7 @@ applications:
       token-expiration: 60
     to:
     - '3'
-    channel: latest/edge
+    channel: yoga/edge
   keystone-kerberos:
     charm: ../../../keystone-kerberos.charm
     options:
@@ -59,7 +59,7 @@ applications:
       keystone_keytab: keystone.keytab
 
   kerberos-server:
-    charm: cs:~openstack-charmers-next/kerberos-test-fixture
+    charm: ch:openstack-charmers-next-kerberos-test-fixture
     num_units: 1
     to:
       - '4'

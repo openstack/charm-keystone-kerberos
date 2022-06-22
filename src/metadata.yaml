@@ -11,10 +11,6 @@ tags:
 - ldap
 series:
 - bionic
-- focal
-- groovy
-- hirsute
-- impish
 subordinate: true
 provides:
   keystone-fid-service-provider:

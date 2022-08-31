@@ -11,6 +11,7 @@ tags:
 - ldap
 series:
 - jammy
+- kinetic
 subordinate: true
 provides:
   keystone-fid-service-provider:

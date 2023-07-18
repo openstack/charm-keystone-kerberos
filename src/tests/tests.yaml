@@ -1,14 +1,15 @@
 charm_name: keystone-kerberos
 
 smoke_bundles:
-  - jammy-zed
+  - jammy-antelope
 
 gate_bundles:
-  - jammy-zed
+  - jammy-antelope
 
 dev_bundles:
-  - jammy-antelope
+  - jammy-bobcat
   - lunar-antelope
+  - mantic-bobcat
 
 configure:
   - zaza.openstack.charm_tests.kerberos.setup.run_all_configuration_steps
@@ -19,6 +20,7 @@ tests:
 tests_options:
   force_deploy:
     - lunar-antelope
+    - mantic-bobcat
 
 target_deploy_status:
   keystone-kerberos:

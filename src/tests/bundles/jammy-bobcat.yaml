@@ -1,0 +1,70 @@
+variables:
+  openstack-origin: &openstack-origin cloud:jammy-bobcat
+
+local_overlay_enabled: False
+
+series: jammy
+comment:
+- 'machines section to decide order of deployment. database sooner = faster'
+machines:
+  '0':
+    constraints: mem=3072M
+  '1':
+    constraints: mem=3072M
+  '2':
+    constraints: mem=3072M
+  '3':
+  '4':
+    series: focal
+  '5':
+relations:
+- - keystone:shared-db
+  - keystone-mysql-router:shared-db
+- - keystone-mysql-router:db-router
+  - mysql-innodb-cluster:db-router
+- - keystone
+  - keystone-kerberos
+applications:
+  keystone-mysql-router:
+    charm: ch:mysql-router
+    channel: latest/edge
+
+  mysql-innodb-cluster:
+    charm: ch:mysql-innodb-cluster
+    num_units: 3
+    to:
+    - '0'
+    - '1'
+    - '2'
+    channel: latest/edge
+
+  keystone:
+    charm: ch:keystone
+    num_units: 1
+    options:
+      openstack-origin: *openstack-origin
+      token-provider: 'fernet'
+      token-expiration: 60
+    to:
+    - '3'
+    channel: latest/edge
+  keystone-kerberos:
+    charm: ../../../keystone-kerberos.charm
+    options:
+      kerberos-realm: 'TESTUBUNTU.COM'
+      kerberos-server: 'kerberos.testubuntu.com'
+      kerberos-domain: 'k8s'
+    resource:
+      keystone_keytab: keystone.keytab
+
+  kerberos-server:
+    charm: ch:openstack-charmers-next-kerberos-test-fixture
+    series: focal
+    num_units: 1
+    to:
+      - '4'
+  ubuntu-test-host:
+    charm: cs:ubuntu
+    num_units: 1
+    to:
+      - '5'

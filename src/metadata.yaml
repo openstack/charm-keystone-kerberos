@@ -11,8 +11,8 @@ tags:
 - ldap
 series:
 - jammy
-- kinetic
 - lunar
+- mantic
 subordinate: true
 provides:
   keystone-fid-service-provider:

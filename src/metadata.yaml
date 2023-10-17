@@ -11,7 +11,6 @@ tags:
 - ldap
 series:
 - jammy
-- lunar
 - mantic
 subordinate: true
 provides:

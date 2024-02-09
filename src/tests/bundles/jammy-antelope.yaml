@@ -47,7 +47,7 @@ applications:
       token-expiration: 60
     to:
     - '3'
-    channel: latest/edge
+    channel: 2024.1/edge
   keystone-kerberos:
     charm: ../../../keystone-kerberos.charm
     options:

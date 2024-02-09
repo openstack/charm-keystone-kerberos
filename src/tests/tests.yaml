@@ -1,16 +1,13 @@
 charm_name: keystone-kerberos
 
 smoke_bundles:
-  - jammy-antelope
-
+  - jammy-caracal
 gate_bundles:
   - jammy-antelope
-
-dev_bundles:
   - jammy-bobcat
-  - lunar-antelope
-  - mantic-bobcat
-
+  - jammy-caracal
+dev_bundles:
+  - noble-caracal
 configure:
   - zaza.openstack.charm_tests.kerberos.setup.run_all_configuration_steps
 
@@ -19,9 +16,7 @@ tests:
 
 tests_options:
   force_deploy:
-    - lunar-antelope
-    - mantic-bobcat
-
+    - noble-caracal
 target_deploy_status:
   keystone-kerberos:
     workload-status: blocked

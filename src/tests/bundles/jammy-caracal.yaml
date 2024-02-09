@@ -1,9 +1,9 @@
 variables:
-  openstack-origin: &openstack-origin distro
+  openstack-origin: &openstack-origin cloud:jammy-caracal
 
 local_overlay_enabled: False
 
-series: mantic
+series: jammy
 comment:
 - 'machines section to decide order of deployment. database sooner = faster'
 machines:
@@ -32,8 +32,6 @@ applications:
   mysql-innodb-cluster:
     charm: ch:mysql-innodb-cluster
     num_units: 3
-    options:
-      source: *openstack-origin
     to:
     - '0'
     - '1'
@@ -49,7 +47,7 @@ applications:
       token-expiration: 60
     to:
     - '3'
-    channel: latest/edge
+    channel: 2024.1/edge
   keystone-kerberos:
     charm: ../../../keystone-kerberos.charm
     options:

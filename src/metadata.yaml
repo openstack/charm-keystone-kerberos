@@ -9,8 +9,6 @@ tags:
   - identity
   - kerberos
   - ldap
-series:
-  - jammy
 subordinate: true
 provides:
   keystone-fid-service-provider:

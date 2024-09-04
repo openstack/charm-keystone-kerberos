@@ -15,7 +15,7 @@ machines:
     constraints: mem=3072M
   '3':
   '4':
-    series: focal
+    series: noble
   '5':
 relations:
 - - keystone:shared-db
@@ -47,7 +47,7 @@ applications:
       token-expiration: 60
     to:
     - '3'
-    channel: 2024.1/edge
+    channel: latest/edge
   keystone-kerberos:
     charm: ../../../keystone-kerberos.charm
     options:
@@ -59,7 +59,7 @@ applications:
 
   kerberos-server:
     charm: ch:openstack-charmers-next-kerberos-test-fixture
-    series: focal
+    series: noble
     num_units: 1
     to:
       - '4'
